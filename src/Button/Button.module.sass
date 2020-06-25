@@ -1,0 +1,52 @@
+// переменная - $fz: 100px
+// подключаем файл - @import 'нужный файл.css|scss|sass'
+// шаблоны - пишет через %  -  %shablonBorder, подключается через @extend %shablonBorder
+
+// миксины - пишется через @mixin через пробел имямиксина() - миксин может принимать в себя переменные, а так же параметры css, при этом может принимать
+// несколько параметров сразу(переменные, значения и тд). подключается через @include имямиксина(). фича в том, что принимая новое значение в себя,
+// миксин может изменять свое дефолтное значение там где оно нужно, при это не искав его во всем списке
+
+// математические операторы - width: 300px / 960px * 100px  // 31.25%
+// логические операторы
+@import './src/App.sass'
+$fF: 'Montserrat', sans-serif
+@mixin btnClass ()
+    outline: none
+    display: inline-block
+    margin: 10px 20px
+    padding: 10px 30px
+    position: relative
+    text-decoration: none
+    color: white
+    transition: .3s
+    font-size: 20px
+
+
+.btn
+    @include btnClass ()
+    border: $brd
+    border-radius: 12px
+    background-color: #627498
+    font-family: $fF
+    opacity: 0.8
+
+    &:active
+        @include btnClass ()
+        background-color: rgb(29, 198, 240)
+        font-family: $fF
+        transform: scale(1.1)
+
+
+
+.btnBlock
+    @include btnClass ()
+    background-color: rgb(42, 40, 40)
+    border: 3px solid #393737
+    border-radius: 12px
+    font-family: $fF
+    opacity: 0.2
+
+
+.startInputError
+    background-color: #ea1544
+    outline-color: #ea1544

@@ -1,0 +1,92 @@
+// переменная - $fz: 100px
+// подключаем файл - @import 'нужный файл.css|scss|sass'
+// шаблоны - пишет через %  -  %shablonBorder, подключается через @extend %shablonBorder
+ // миксины - пишется через @mixin через пробел имямиксина() - миксин может принимать в себя переменные, а так же параметры css, при этом может принимать
+    несколько параметров сразу(переменные, значения и тд). подключается через @include имямиксина(). фича в том, что принимая новое значение в себя,
+    миксин может изменять свое дефолтное значение там где оно нужно, при это не искав его во всем списке
+// математические операторы - width: 300px / 960px * 100px  // 31.25%
+// логические операторы
+
+@mixin disAliJust ()
+    display: flex
+    align-items: center
+    justify-content: center
+
+@mixin textDecOut ()
+    text-decoration: none
+    outline: none
+
+@mixin disPos ()
+    display: inline-block
+    position: relative
+
+$brd: 4px solid #08d6fa
+$bR: 14px
+
+
+.App
+    @include disAliJust ()
+    flex-direction: row
+    background-image: url("https://miro.medium.com/max/3840/1*5KV3Z7P6b8K8YXs6_DgaSQ.jpeg")
+    background-repeat: no-repeat
+    background-size: cover
+    height: 100vh
+    width: 100%
+    font-weight: 300
+
+    .counter
+        @include disAliJust ()
+        flex-direction: column
+        border: $brd
+        border-radius: $bR
+        margin: 270px
+        padding: 50px
+        height: max-content
+        width: 300px
+        color: white
+        font-weight: 700
+        font-size: 40px
+        box-shadow: 0 0 3px 3px rgb(3, 217, 247)
+
+        .error__message
+            @include disAliJust ()
+            color: #121212
+            width: 100%
+            height: 100%
+            background-color: #f13f5b
+            border-radius: 8px
+            opacity: 0.8
+            font-size: 27px
+            font-weight: 700
+
+        .title__wrapper
+            @include disAliJust ()
+            flex-direction: column
+            border: $brd
+            border-radius: $bR
+            width: 320px
+            height: 130px
+            opacity: 0.8
+
+            .item
+                @include disAliJust ()
+                margin: 15px
+                font-size: 18px
+                span
+                    @include disAliJust ()
+                    margin-right: 10px
+                    color: #f52e4d
+                    font-size: 18px
+                    font-weight: 800
+                    input
+                        height: 25px
+                        width: 150px
+
+        .counter__btn
+            @include disAliJust ()
+            border: $brd
+            border-radius: $bR
+            width: 100%
+            height: 70px
+            padding: 10px
+            margin-top: 25px

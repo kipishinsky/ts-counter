@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./Button.module.scss";
+import style from "./Button.module.sass";
 
 
 export type ButtonType = {

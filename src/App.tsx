@@ -1,19 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import './App.scss';
+import './App.sass';
 import Counter from './Counter/Counter';
 import CounterSettings from './CounterSettings/CounterSettings';
 
 
 function App() {
 
-    let [maxValue, setMaxValue] = useState();
 
     let [startValue, setStartValue] = useState();
+    let [finalValue , setFinalValue] = useState(0);
+    let [maxValue, setMaxValue] = useState();
 
     let [count, setCount] = useState <number> (0);
-
-    let [finalValue , setFinalValue] = useState(0);
-
     let [message, setMessage] = useState <string> ('');
 
 
@@ -44,9 +42,9 @@ function App() {
         if (startValue === maxValue ||
             startValue < 0 || maxValue < 0 ||
             startValue > maxValue) {
-            setMessage('Incorrect value')
+            setMessage('INCORRECT VALUE')
         } else {
-            setMessage('Enter values and press Set')
+            setMessage(' ENTER VALUES AND PRESS SET')
         }
     }, [startValue, maxValue])
 

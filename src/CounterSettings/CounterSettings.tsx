@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import style from "../Button/Button.module.scss"
+import style from "../Button/Button.module.sass"
 
 
 type PropsType = {
@@ -20,8 +20,7 @@ const value = props.maxValue === props.startValue || props.maxValue  < 0 || prop
             <div className="title__wrapper">
                 <div className="item">
                     <span>max value:</span>
-                    <input className={value
-                        ? style.startInputError:style.maxInput}
+                    <input className={value ? style.startInputError:style.maxInput}
                            type="number"
                            value={props.maxValue}
                            onChange={e => {props.setMaxValue(e.currentTarget.valueAsNumber)}} />
@@ -49,7 +48,7 @@ const value = props.maxValue === props.startValue || props.maxValue  < 0 || prop
                         || props.startValue <= -1
                         || props.maxValue <= -1
                         || props.startValue > props.maxValue
-                            ? style.btnBlock : style.btn} title="set" />
+                            ? style.btnBlock : style.btn} title="SET" />
             </div>
         </div>
     );
